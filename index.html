@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramadan Kareem | Professional Greetings</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="stars"></div>
+        <div class="main-card">
+            <div class="moon-icon">🌙</div>
+            <h1 class="title">Ramadan Kareem</h1>
+            <p class="subtitle">May this holy month bring peace, prosperity, and blessings to your home.</p>
+            
+            <div class="wish-box">
+                <p id="wish-text">{{ wish }}</p>
+              <div class="main-card">
+    <p id="timer"></p>
+</div>
+  
+            
+         </div>
+
+            <a href="/" class="btn-gold" style="text-decoration: none;">GET NEW BLESSING</a>
+        </div>
+    </div>
+    <script>
+    // Set Ramadan countdown date (example date)
+    var countDownDate = new Date("MARCH  21, 2026 00:00:00").getTime();
+
+    var x = setInterval(function() {
+
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
+
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("timer").innerHTML =
+            days + "d " + hours + "h "
+            + minutes + "m " + seconds + "s ";
+
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("timer").innerHTML = "EID MUBARAK 🌙";
+        }
+
+    }, 1000);
+</script>
+
+</body>
+
+</html>
